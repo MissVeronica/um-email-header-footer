@@ -5,6 +5,15 @@ Extension to Ultimate Member for adding HTML Header/Footer to all outgoing UM No
 1. Custom Header - Enter your HTML Email Header
 2. Custom Footer - Enter your HTML Email Footer
 
+## HTML code example
+
+&lt;div style="max-width: 560px; padding: 20px; background: #ffffff; border-radius: 5px; margin: 40px auto; font-family: Open Sans,Helvetica,Arial; font-size: 15px; color: #666;"&gt;
+&lt;div style="color: #444444; font-weight: normal;"&gt;
+&lt;div style="text-align: center; font-weight: 600; font-size: 26px; padding: 10px 0; border-bottom: solid 3px #eeeeee;">{site_name} Header&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
 ## Updates
 1. Version 1.2.0 Code improvements
 
