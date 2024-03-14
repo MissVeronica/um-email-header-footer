@@ -6,6 +6,7 @@ Extension to Ultimate Member for adding HTML Header/Footer to all outgoing UM No
 2. Custom Email Footer - Enter your HTML Email Footer for all outgoing UM Notification emails.
 
 ## HTML code example
+UM email placeholders are supported in both Header and Footer
 
 &lt;div style="max-width: 560px; padding: 20px; background: #ffffff; border-radius: 5px; margin: 40px auto; font-family: Open Sans,Helvetica,Arial; font-size: 15px; color: #666;"&gt;
 &lt;div style="color: #444444; font-weight: normal;"&gt;
