@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Ultimate Member - Email Header/Footer
  * Description:     Extension to Ultimate Member for adding HTML Header/Footer to all outgoing UM Notification emails.
- * Version:         1.0.0
+ * Version:         1.1.0
  * Requires PHP:    7.4
  * Author:          Miss Veronica
  * License:         GPL v2 or later
@@ -21,15 +21,24 @@ class UM_Email_Header_Footer {
     function __construct( ) {
 
         add_filter( 'um_settings_structure',         array( $this, 'um_settings_structure_header_footer' ), 10, 1 );
-        add_filter( 'um_email_send_message_content', array( $this, 'email_add_header_footer' ), 10, 3 );
+        add_filter( 'um_email_send_message_content', array( $this, 'email_add_footer' ), 10, 3 );
+        add_filter( 'um_email_template_body_attrs',  array( $this, 'email_add_header' ), 10, 3 );
     }
 
-    public function email_add_header_footer( $message, $slug, $args ) {
-
-        $header_footer_pre_html  = UM()->options()->get( 'email_templates_header_footer_pre_html' );
+    public function email_add_footer( $message, $slug, $args ) {
+        
         $header_footer_post_html = UM()->options()->get( 'email_templates_header_footer_post_html' );
 
-        $message = $header_footer_pre_html . $message . $header_footer_post_html;
+        $message = str_replace( array( '</body>', '</html>' ) , '', $message );
+        $message .= $header_footer_post_html . '</body></html>';
+
+        return $message;
+    }
+
+    public function email_add_header( $message, $slug, $args ) {
+
+        $header_footer_pre_html = UM()->options()->get( 'email_templates_header_footer_pre_html' );
+        $message .= '>' . $header_footer_pre_html . '<p></p';
 
         return $message;
     }
@@ -37,7 +46,7 @@ class UM_Email_Header_Footer {
     public function um_settings_structure_header_footer( $settings_structure ) {
 
         $settings_structure['email']['form_sections']['header_footer']['title']       = __( 'Header/Footer', 'ultimate-member' );
-        $settings_structure['email']['form_sections']['header_footer']['description'] = __( 'Plugin version 1.0.0 - tested with UM 2.8.4', 'ultimate-member' );
+        $settings_structure['email']['form_sections']['header_footer']['description'] = __( 'Plugin version 1.1.0 - tested with UM 2.8.4', 'ultimate-member' );
 
         $settings_structure['email']['form_sections']['header_footer']['fields'][] =
  
@@ -63,4 +72,6 @@ class UM_Email_Header_Footer {
 }
 
 new UM_Email_Header_Footer();
+
+
 
