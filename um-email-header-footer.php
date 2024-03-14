@@ -46,7 +46,7 @@ class UM_Email_Header_Footer {
     public function um_settings_structure_header_footer( $settings_structure ) {
 
         $settings_structure['email']['form_sections']['header_footer']['title']       = __( 'Header/Footer', 'ultimate-member' );
-        $settings_structure['email']['form_sections']['header_footer']['description'] = __( 'Plugin version 1.1.0 - tested with UM 2.8.4', 'ultimate-member' );
+        $settings_structure['email']['form_sections']['header_footer']['description'] = __( 'Plugin version 1.2.0 - tested with UM 2.8.4', 'ultimate-member' );
 
         $settings_structure['email']['form_sections']['header_footer']['fields'][] =
  
