@@ -6,7 +6,7 @@ Extension to Ultimate Member for adding HTML Header/Footer to all outgoing UM No
 2. Custom Footer - Enter your HTML Email Footer
 
 ## Updates
-1. Version 1.1.0 Code improvements
+1. Version 1.2.0 Code improvements
 
 ## Installation
 Download the zip file and install as a WP Plugin, activate the plugin.
