@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Ultimate Member - Email Header/Footer
  * Description:     Extension to Ultimate Member for adding HTML Header/Footer to all outgoing UM Notification emails.
- * Version:         1.1.0
+ * Version:         1.2.0
  * Requires PHP:    7.4
  * Author:          Miss Veronica
  * License:         GPL v2 or later
@@ -30,7 +30,7 @@ class UM_Email_Header_Footer {
         $header_footer_post_html = UM()->options()->get( 'email_templates_header_footer_post_html' );
 
         $message = str_replace( array( '</body>', '</html>' ) , '', $message );
-        $message .= $header_footer_post_html . '</body></html>';
+        $message .= html_entity_decode( wp_unslash( $header_footer_post_html ),  ENT_QUOTES, 'UTF-8' ) . '</body></html>';
 
         return $message;
     }
@@ -38,7 +38,7 @@ class UM_Email_Header_Footer {
     public function email_add_header( $message, $slug, $args ) {
 
         $header_footer_pre_html = UM()->options()->get( 'email_templates_header_footer_pre_html' );
-        $message .= '>' . $header_footer_pre_html . '<p></p';
+        $message .= '>' . html_entity_decode( wp_unslash( $header_footer_pre_html ),  ENT_QUOTES, 'UTF-8' ) . '<p></p';
 
         return $message;
     }
@@ -72,6 +72,3 @@ class UM_Email_Header_Footer {
 }
 
 new UM_Email_Header_Footer();
-
-
-
