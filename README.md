@@ -1,9 +1,9 @@
-# UM Email Header Footer
+# UM Email Header Footer - Version 1.4.0
 Extension to Ultimate Member for adding HTML Header/Footer to all outgoing UM Notification emails.
 
 ## UM Settings -> Email
-1. Custom Email Header - Enter your HTML Email Header for all outgoing UM Notification emails.
-2. Custom Email Footer - Enter your HTML Email Footer for all outgoing UM Notification emails.
+* Custom Email Header - Enter your HTML Email Header for all outgoing UM Notification emails.
+* Custom Email Footer - Enter your HTML Email Footer for all outgoing UM Notification emails.
 
 ## HTML code example
 UM email placeholders are supported in both Header and Footer
@@ -14,9 +14,13 @@ UM email placeholders are supported in both Header and Footer
 &lt;/div&gt;
 &lt;/div&gt;
 
+## UM Settings -> Email -> enail template selection
+* Email Content display with Header&Footer
+* Enter display width in pixels. Default value is 390px for an average mobile.
 
 ## Updates
-1. Version 1.3.0 Code improvements
+* Version 1.3.0 Code improvements
+* Version 1.4.0 Addition of a display per email template of the email with header and footer together
 
 ## Installation
 Download the zip file and install as a WP Plugin, activate the plugin.
